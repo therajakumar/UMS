@@ -1,54 +1,69 @@
-# React + TypeScript + Vite
+# User Management System (UMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a frontend application for a user management system with authentication and image upload functionality, built using React, Vite, Tailwind CSS, and ShadCN.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User registration and login with email or phone number
+- JWT authentication and cookie-based session management
+- Image upload and retrieval system
+- Secure API calls to the backend
+- Styled with Tailwind CSS and ShadCN
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React.js
+- Vite
+- Tailwind CSS
+- ShadCN
+- React Router DOM
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+
+### Frontend Setup
+
+1. Navigate to the frontend folder:
+
+   ```sh
+   cd user-management-frontend
+   ```
+
+2. Install dependencies:
+
+   ```sh
+   npm install
+   ```
+
+3. Create a `.env` file and add the following:
+
+   ```env
+   VITE_API_URL=http://localhost:5001
+   ```
+
+4. Start the frontend application:
+   ```sh
+   npm run dev
+   ```
+   The frontend will be accessible at `http://localhost:5173`
+
+## Project Structure
+
+```
+user-management-frontend/
+├── src/
+│   ├── pages/   # React pages (Login, Register, Photos, Home, NotFound)
+│   ├── App.tsx  # Main React app file
+│   ├── main.tsx # Entry point
+├── .env         # Frontend environment variables
+├── vite.config.ts # Vite configuration
+├── package.json # Frontend dependencies
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Repository
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+[GitHub Repository](https://github.com/therajakumar/UMS)
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## License
+
+This project is open-source and free to use. Modify it as per your needs.
